@@ -25,8 +25,8 @@
     <packaging>pom</packaging>
 
     <name>wxbot-ilink</name>
-    <description>面向生产环境的非官方微信 iLink Bot Java SDK</description>
-    <url>https://github.com/allenwan/wxbot-ilink</url>
+    <description>企业 AI 连接微信的 Java 17 iLink Bot SDK 与运行时中间层</description>
+    <url>https://github.com/wanweiLab/wxbot-ilink</url>
     <inceptionYear>2026</inceptionYear>
     <licenses>
         <license>
@@ -37,17 +37,17 @@
     </licenses>
     <developers>
         <developer>
-            <id>allenwan</id>
-            <name>Allen Wan</name>
+            <id>wanweiLab</id>
+            <name>wanweiLab</name>
             <roles>
                 <role>维护者</role>
             </roles>
         </developer>
     </developers>
     <scm>
-        <connection>scm:git:https://github.com/allenwan/wxbot-ilink.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com/allenwan/wxbot-ilink.git</developerConnection>
-        <url>https://github.com/allenwan/wxbot-ilink</url>
+        <connection>scm:git:https://github.com/wanweiLab/wxbot-ilink.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/wanweiLab/wxbot-ilink.git</developerConnection>
+        <url>https://github.com/wanweiLab/wxbot-ilink</url>
         <tag>HEAD</tag>
     </scm>
 
