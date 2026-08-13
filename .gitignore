@@ -1,0 +1,37 @@
+# Maven 构建产物
+target/
+node_modules/
+*.tsbuildinfo
+vite.config.js
+vite.config.d.ts
+
+# 本地环境文件与密钥
+.env
+.env.*
+!.env.example
+
+# 本地数据库、快照与凭证文件
+*.db
+*.sqlite
+*.sqlite3
+*.pem
+*.key
+
+# 管理后台构建后的静态 bundle；从前端源码重新构建生成
+wxbot-ilink-admin-server/src/main/resources/static/
+wxbot-ilink-admin-server/src/main/resources/static/assets/
+
+# 前端依赖锁文件由 npm install 重新生成
+wxbot-ilink-admin-web/package-lock.json
+
+# IntelliJ IDEA 本地配置
+.idea/
+*.iml
+
+# macOS 本地文件
+.DS_Store
+
+# 本地日志与临时文件
+*.log
+*.tmp
+*.part

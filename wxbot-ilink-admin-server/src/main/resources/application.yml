@@ -1,0 +1,57 @@
+# Copyright 2026 wxbot-ilink contributors
+# SPDX-License-Identifier: Apache-2.0
+
+server:
+  port: ${WXBOT_PORT:8080}
+  shutdown: graceful
+
+spring:
+  application:
+    name: wxbot-ilink-admin-server
+  datasource:
+    url: ${WXBOT_MYSQL_URL}
+    username: ${WXBOT_MYSQL_USERNAME}
+    password: ${WXBOT_MYSQL_PASSWORD}
+    hikari:
+      maximum-pool-size: ${WXBOT_DB_POOL_SIZE:16}
+      minimum-idle: ${WXBOT_DB_MIN_IDLE:2}
+      connection-timeout: 5000
+      validation-timeout: 3000
+  lifecycle:
+    timeout-per-shutdown-phase: 20s
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    # SQL 参数可能包含加密载荷或业务标识，生产环境禁止输出 SQL 参数明细。
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+
+logging:
+  level:
+    root: INFO
+    io.github.wxbot.ilink: INFO
+    io.github.wxbot.ilink.manager.infrastructure.persistence.mapper: WARN
+    io.github.wxbot.ilink.store.mybatis.mapper: WARN
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+
+wxbot:
+  admin:
+    # 必须通过环境变量提供；Base64 解码后为 16、24 或 32 字节，生产中不可变更。
+    master-key-base64: ${WXBOT_MASTER_KEY_BASE64}
+    # 每个运行副本必须唯一，Kubernetes 推荐使用 Pod UID。
+    instance-id: ${WXBOT_INSTANCE_ID}
+    # 管理员账号密码必须由部署环境注入，不能写入源码。
+    username: ${WXBOT_ADMIN_USERNAME}
+    password: ${WXBOT_ADMIN_PASSWORD}
+    token-ttl: 8h
+    initialize-schema: false
+    restore-on-startup: true
+    dispatch-stripes: 2
+    dispatch-queue-capacity: 256
+    store-workers: 8
+    store-queue-capacity: 2048
