@@ -213,6 +213,20 @@ CompletionStage<SendReceipt> receipt = client.send(request);
 
 前端源码位于 `wxbot-ilink-admin-web`。生产静态资源应由前端构建生成，不要将本地构建缓存、IDE 配置或运行时密钥提交到仓库。
 
+## 实际运行效果
+
+下面是项目管理后台在实际运行环境中的截图。第一张展示管理员登录页，第二张展示多 Bot 管理页，包含用户绑定、运行状态、实例状态、链路健康和常用运维操作。
+
+截图中的账号、用户 ID 和运行数据来自测试环境，仅用于说明界面和运行状态。正式部署时请使用自己的管理员配置，并按照企业安全要求管理账号、密码和会话密钥。
+
+### 管理员登录
+
+![wxbot-ilink 管理员登录页](assets/screenshots/admin-login.png)
+
+### 多 Bot 管理
+
+![wxbot-ilink 多 Bot 管理页](assets/screenshots/bot-management.png)
+
 ## 构建和测试
 
 要求如下。
