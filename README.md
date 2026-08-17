@@ -289,8 +289,6 @@ npm run build
 
 ## 开发资料
 
-代码仓库根目录只保留面向使用者的本 README。开发进度、架构决策、设计审计、迁移、发布和验收资料统一放在上层工作区的 `super-wx/docs/wxbot-ilink/`，不作为 SDK 仓库的发布入口。
-
 源码阅读建议从 `wxbot-ilink-api` 的 `ILinkClient` 开始，再依次阅读 `WxbotILinkClient`、`UpdateLoop`、`UpdatePoller`、`StripedMessageDispatcher`、`MessageSender` 和 `BotRuntimeManager`。
 
 ## 许可证
